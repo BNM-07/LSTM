@@ -3,7 +3,7 @@
 Production-grade analytics dashboard with LSTM forecasting.
 """
 import os
-os.environ["KERAS_BACKEND"] = "torch"
+
 
 import streamlit as st
 import pandas as pd
@@ -321,7 +321,7 @@ def load_model_and_preprocessor(model_type='lstm'):
         import os
         import joblib
         import streamlit as st
-        from keras.models import load_model   # ✅ FIXED
+        from tensorflow.keras.models import load_model  # ✅ correct
 
         st.write("Files in models folder:", os.listdir("models"))
 
@@ -338,7 +338,6 @@ def load_model_and_preprocessor(model_type='lstm'):
     except Exception as e:
         st.error(f"Model loading error: {e}")
         return None, None
-
 
 # ─────────────────────────────────────────────────────────────
 # LOAD DATA
