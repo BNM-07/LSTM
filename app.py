@@ -318,12 +318,25 @@ def load_training_history(model_type='lstm'):
 
 def load_model_and_preprocessor(model_type='lstm'):
     try:
-        import keras
+        import os
         import joblib
-        model = keras.models.load_model(f'models/sales_{model_type}_model.keras')
+        import streamlit as st
+        from keras.models import load_model   # ✅ FIXED
+
+        st.write("Files in models folder:", os.listdir("models"))
+
+        model_path = f'models/sales_{model_type}_model.keras'
+
+        if not os.path.exists(model_path):
+            raise FileNotFoundError(f"{model_path} not found")
+
+        model = load_model(model_path)
         prep = joblib.load('models/preprocessor.pkl')
+
         return model, prep
-    except:
+
+    except Exception as e:
+        st.error(f"Model loading error: {e}")
         return None, None
 
 
