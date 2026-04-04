@@ -1,0 +1,12 @@
+{
+  "rmse": 33633.41957042132,
+  "mae": 31731.494140625,
+  "r2": -5.941458702087402,
+  "mape": 42.32527542114258,
+  "model_type": "gru",
+  "train_samples": 1407,
+  "test_samples": 330,
+  "lookback": 30,
+  "epochs_run": 6,
+  "training_time_seconds": 15.0
+}

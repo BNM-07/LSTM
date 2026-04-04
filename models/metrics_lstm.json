@@ -1,0 +1,12 @@
+{
+  "rmse": 2192.0890720953835,
+  "mae": 1604.5052490234375,
+  "r2": 0.8962554931640625,
+  "mape": 8.43578815460205,
+  "model_type": "lstm",
+  "train_samples": 5680,
+  "test_samples": 1332,
+  "lookback": 30,
+  "epochs_run": 32,
+  "training_time_seconds": 780.7
+}
